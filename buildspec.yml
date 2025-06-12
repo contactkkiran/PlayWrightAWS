@@ -15,6 +15,6 @@ phases:
       - npx playwright test
 
 artifacts:
+  base-directory: playwright-report  # 📁 the folder where HTML report is generated
   files:
-    - test-results/**/*
-    - playwright-report/**/*
+    - '**/*'  # 📄 includes everything in the report folder
