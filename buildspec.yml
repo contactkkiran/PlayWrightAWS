@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - echo "Installing dependencies..."
+      - npm ci
+      - npx playwright install --with-deps
+
+  build:
+    commands:
+      - echo "Running Playwright tests..."
+      - npx playwright test
+
+artifacts:
+  files:
+    - test-results/**/*
+    - playwright-report/**/*
